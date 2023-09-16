@@ -7,6 +7,7 @@ import android.os.SystemClock
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.TextView
+import android.widget.Toast
 import java.util.Timer
 import java.util.TimerTask
 
@@ -21,6 +22,11 @@ abstract class MainActivity : AppCompatActivity() {
         buttonStart = findViewById(R.id.button_start)
         view_timer.isCountDown = true
         view_timer.base = SystemClock.elapsedRealtime() + 20000
-        view_timer.start()
+        buttonStart.setOnClickListener{
+            Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
+
+        }
+
     }
 }
+
