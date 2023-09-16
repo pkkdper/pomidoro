@@ -22,13 +22,10 @@ class MainActivity : AppCompatActivity() {
         buttonStart = findViewById(R.id.button_start)
         viewTimer = findViewById(R.id.view_timer)
         viewTimer.isCountDown = true
-        viewTimer.base = SystemClock.elapsedRealtime() + 20000
-        viewTimer.start()
         buttonStart.setOnClickListener{
-            Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
-
+            viewTimer.base = SystemClock.elapsedRealtime() + 20000
+            viewTimer.start()
         }
-
     }
 }
 
