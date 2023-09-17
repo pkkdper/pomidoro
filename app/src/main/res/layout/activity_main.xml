@@ -10,23 +10,26 @@
         android:id="@+id/view_timer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="292dp"
-        android:layout_marginEnd="136dp"
-        android:textSize="40sp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="280dp"
+        android:layout_marginEnd="106dp"
+        android:textSize="60sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="24" />
 
     <TextView
+        android:id="@+id/text_view_choice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:layout_marginEnd="81dp"
+        android:layout_marginEnd="36dp"
         android:text="Choose length of your study"
-        android:textSize="20sp"
+        android:textSize="27sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/text_view_choice"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
         android:id="@+id/duration_radio_group"
@@ -44,19 +47,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="30 minutes" />
+            android:text="30 minutes"
+            android:textSize="25sp"/>
 
         <RadioButton
             android:id="@+id/radioOption2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="35 minutes" />
+            android:text="35 minutes"
+            android:textSize="25sp"/>
 
         <RadioButton
             android:id="@+id/radioOption3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="40 minutes" />
+            android:text="40 minutes"
+            android:textSize="25sp"/>
 
     </RadioGroup>
 

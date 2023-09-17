@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         textViewChoice = findViewById(R.id.text_view_choice)
         textViewChoice.visibility = View.GONE
         durationRadioGroup.visibility = View.GONE
+        viewTimer.visibility = View.VISIBLE
     }
 }
 
