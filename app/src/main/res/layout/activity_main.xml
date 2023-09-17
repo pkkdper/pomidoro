@@ -25,10 +25,11 @@
         android:text="Choose length of your study"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/text_view_choice"/>
 
     <RadioGroup
-        android:id="@+id/durationRadioGroup"
+        android:id="@+id/duration_radio_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="153dp"

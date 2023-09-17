@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.SystemClock
+import android.view.View
 import android.widget.Button
 import android.widget.Chronometer
 import android.widget.RadioGroup
@@ -18,7 +19,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewTimer: Chronometer
     private var countdownTimer: CountDownTimer? = null
     private lateinit var durationRadioGroup: RadioGroup
-
+    private lateinit var textViewChoice: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,8 +50,13 @@ class MainActivity : AppCompatActivity() {
             }
             countdownTimer?.start()
             viewTimer.start()
+            hideOptions()
         }
-
+    }
+    private fun hideOptions() {
+        textViewChoice = findViewById(R.id.text_view_choice)
+//        visibility = View.GONE
+        durationRadioGroup = findViewById(R.id.duration_radio_group)
     }
 }
 
