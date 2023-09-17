@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var buttonStart: Button
     private lateinit var viewTimer: Chronometer
     private var countdownTimer: CountDownTimer? = null
-    private var time: Int = 0
     private lateinit var durationRadioGroup: RadioGroup
 
 
@@ -41,25 +40,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonStart.setOnClickListener {
-            val selectedRadioId = durationRadioGroup.checkedRadioButtonId
-//            countdownTimer?.start()
-            viewTimer.base = SystemClock.elapsedRealtime() + 20000
-//            viewTimer.start()
-            when (selectedRadioId) {
-                R.id.radioOption1 -> startTimer( 30 * 60 * 1000) // 5 minutes in milliseconds
-                R.id.radioOption2 -> startTimer(35 * 60 * 1000) // 10 minutes in milliseconds
-                R.id.radioOption3 -> startTimer(40 * 60 * 1000) // 15 minutes in milliseconds
+            when (durationRadioGroup.checkedRadioButtonId) {
+                R.id.radioOption1 -> viewTimer.base = SystemClock.elapsedRealtime() + (30 * 60 * 1000) // 30 minutes in milliseconds
+                R.id.radioOption2 -> viewTimer.base = SystemClock.elapsedRealtime() + (30 * 60 * 1000) // 35 minutes in milliseconds
+                R.id.radioOption3 -> viewTimer.base = SystemClock.elapsedRealtime() + (30 * 60 * 1000) // 40 minutes in milliseconds
                 // Add more cases for other options
                 else -> Toast.makeText(this, "Please select a duration.", Toast.LENGTH_SHORT).show()
             }
+            countdownTimer?.start()
+            viewTimer.start()
         }
 
-    }
-    private fun startTimer(durationMillis: Long) {
-        // Implement your timer logic here with the selected duration
-        // For example, you can use CountDownTimer to start a countdown timer
-        // and perform actions when it finishes.
-        Toast.makeText(this, "Timer started with ${durationMillis / 1000} seconds.", Toast.LENGTH_SHORT).show()
     }
 }
 
