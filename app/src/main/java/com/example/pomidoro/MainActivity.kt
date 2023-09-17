@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         buttonStart = findViewById(R.id.button_start)
         viewTimer = findViewById(R.id.view_timer)
         viewTimer.isCountDown = true
-        durationRadioGroup = findViewById(R.id.durationRadioGroup)
+        durationRadioGroup = findViewById(R.id.duration_radio_group)
 
         countdownTimer = object : CountDownTimer(20000, 1000) { // 20000 milliseconds = 20 seconds
             override fun onTick(millisUntilFinished: Long) {
@@ -55,8 +55,8 @@ class MainActivity : AppCompatActivity() {
     }
     private fun hideOptions() {
         textViewChoice = findViewById(R.id.text_view_choice)
-//        visibility = View.GONE
-        durationRadioGroup = findViewById(R.id.duration_radio_group)
+        textViewChoice.visibility = View.GONE
+        durationRadioGroup.visibility = View.GONE
     }
 }
 
