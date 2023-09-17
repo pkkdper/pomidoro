@@ -17,6 +17,34 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:targetApi="24" />
 
+    <RadioGroup
+        android:id="@+id/durationRadioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="86dp"
+        tools:layout_editor_absoluteY="101dp">
+
+        <RadioButton
+            android:id="@+id/radioOption1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="30 minutes" />
+
+        <RadioButton
+            android:id="@+id/radioOption2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="35 minutes" />
+
+        <RadioButton
+            android:id="@+id/radioOption3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="40 minutes" />
+
+    </RadioGroup>
+
     <Button
         android:layout_width="135dp"
         android:layout_height="58dp"
