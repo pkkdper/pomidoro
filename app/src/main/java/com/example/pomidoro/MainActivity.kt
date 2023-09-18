@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var countdownTimer: CountDownTimer? = null
     private lateinit var durationRadioGroup: RadioGroup
     private lateinit var textViewChoice: TextView
-    private var millisInFuture: Long = 600
+    private var millisInFuture: Long = 6000
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
