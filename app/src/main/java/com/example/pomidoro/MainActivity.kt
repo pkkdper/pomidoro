@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     private var countdownTimer: CountDownTimer? = null
     private lateinit var durationRadioGroup: RadioGroup
     private lateinit var textViewChoice: TextView
-    private var millisInFuture: Long = 6000
+    private var millisInFuture: Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -35,7 +35,8 @@ class MainActivity : AppCompatActivity() {
         buttonStart.setOnClickListener {
             when (durationRadioGroup.checkedRadioButtonId) {
                 R.id.radioOption1 -> {viewTimer.base = SystemClock.elapsedRealtime() + (1 * 6 * 1000)
-                    Log.e("TAG","HI BITCH")} // 30 minutes in milliseconds
+                    Log.e("TAG","HI BITCH")
+                    millisInFuture = 6000} // 30 minutes in milliseconds
                 R.id.radioOption2 -> {viewTimer.base = SystemClock.elapsedRealtime() + (3 * 6 * 1000)} // 35 minutes in milliseconds
                 R.id.radioOption3 -> {viewTimer.base = SystemClock.elapsedRealtime() + (3 * 6 * 1000)} // 40 minutes in milliseconds
                 // Add more cases for other options
