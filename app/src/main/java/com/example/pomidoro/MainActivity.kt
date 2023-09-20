@@ -32,12 +32,20 @@ class MainActivity : AppCompatActivity() {
         viewTimer.isCountDown = true
         durationRadioGroup = findViewById(R.id.duration_radio_group)
 
+//        if (durationRadioGroup.checkedRadioButtonId == R.id.radioOption1) {
+//                millisInFuture = 6000
+//            }
+//        else if (durationRadioGroup.checkedRadioButtonId == R.id.radioOption2) {
+//            millisInFuture = 12000
+//        }
+//        else if (durationRadioGroup.checkedRadioButtonId == R.id.radioOption3) {
+//            millisInFuture = 18000
+//        }
+
         buttonStart.setOnClickListener {
             when (durationRadioGroup.checkedRadioButtonId) {
-                R.id.radioOption1 -> {viewTimer.base = SystemClock.elapsedRealtime() + (1 * 6 * 1000)
-                    Log.e("TAG","HI BITCH")
-                    millisInFuture = 6000} // 30 minutes in milliseconds
-                R.id.radioOption2 -> {viewTimer.base = SystemClock.elapsedRealtime() + (3 * 6 * 1000)} // 35 minutes in milliseconds
+                R.id.radioOption1 -> {viewTimer.base = SystemClock.elapsedRealtime() + (1 * 6 * 1000)} // 30 minutes in milliseconds
+                R.id.radioOption2 -> {viewTimer.base = SystemClock.elapsedRealtime() + (2 * 6 * 1000)} // 35 minutes in milliseconds
                 R.id.radioOption3 -> {viewTimer.base = SystemClock.elapsedRealtime() + (3 * 6 * 1000)} // 40 minutes in milliseconds
                 // Add more cases for other options
                 else -> Toast.makeText(this, "Please select a duration.", Toast.LENGTH_SHORT).show()
@@ -46,10 +54,8 @@ class MainActivity : AppCompatActivity() {
             viewTimer.start()
             hideOptions()
         }
-
         countdownTimer = object : CountDownTimer(millisInFuture, 1000) { // 20000 milliseconds = 20 seconds
             override fun onTick(millisUntilFinished: Long) {
-                // Update UI or perform actions on each tick if needed
             }
 
             override fun onFinish() {
