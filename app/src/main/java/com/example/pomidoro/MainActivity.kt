@@ -40,29 +40,28 @@ class MainActivity : AppCompatActivity() {
         viewTimer.isCountDown = true
         durationRadioGroup = findViewById(R.id.duration_radio_group)
 
-//        fun showNotification() {
-//            val notificationBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
-//                .setSmallIcon(R.drawable.notification_icon)
-//                .setContentTitle("Timer Finished")
-//                .setContentText("Your timer has reached 00:00.")
-//                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-//
-//            val notificationManager =
-//                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
-//
-//            // Check if the channel exists, and if not, create it
-//            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-//                val channel = NotificationChannel(
-//                    CHANNEL_ID,
-//                    "Timer Notifications",
-//                    NotificationManager.IMPORTANCE_DEFAULT
-//                )
-//                notificationManager.createNotificationChannel(channel)
-//            }
-//
-//            // Show the notification
-//            notificationManager.notify(1, notificationBuilder.build())
-//        }
+        fun showNotification() {
+            val notificationBuilder = NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.notification_icon)
+                .setContentTitle("Timer Finished")
+                .setContentText("Your timer has reached 00:00.")
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+            val notificationManager =
+                getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+
+            // Check if the channel exists, and if not, create it
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                val channel = NotificationChannel(
+                    CHANNEL_ID,
+                    "Timer Notifications",
+                    NotificationManager.IMPORTANCE_DEFAULT
+                )
+                notificationManager.createNotificationChannel(channel)
+            }
+
+            // Show the notification
+            notificationManager.notify(1, notificationBuilder.build())
+        }
 
         when (durationRadioGroup.checkedRadioButtonId) {
             R.id.radioOption1 -> {
@@ -90,13 +89,11 @@ class MainActivity : AppCompatActivity() {
                     countdownTimer?.start()
                     viewTimer.start()
                     hideOptions()
-//                    mode = "work"
                     Log.e("WORK", "WORK")
                 }
                 if (mode == "break") {
                     countdownTimerBreak?.start()
                     viewTimer.start()
-//                    mode = "break"
                     Log.e("Break", "Break")
                 }
         }
@@ -109,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                 // Stop the Chronometer when the countdown timer finishes
                 viewTimer.stop()
                 mode = "break"
-//                showNotification()
+                showNotification()
             }
         }
         countdownTimerBreak = object : CountDownTimer(5000, 1000) { // 20000 milliseconds = 20 seconds
@@ -120,7 +117,7 @@ class MainActivity : AppCompatActivity() {
                 // Stop the Chronometer when the countdown timer finishes
                 viewTimer.stop()
                 mode = "work"
-//                showNotification()
+                showNotification()
             }
         }
     }
